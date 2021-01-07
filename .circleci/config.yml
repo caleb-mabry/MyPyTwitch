@@ -19,6 +19,12 @@ jobs:
           command: |
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
             chmod +x ./cc-test-reporter
+      - run:
+          command: ./cc-test-reporter before-build
+      - run:
+          command: coverage xml
+      - run:
+          command: ./cc-test-reporter after-build --exit-code $?
 
 
 workflows:
