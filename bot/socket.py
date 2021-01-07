@@ -1,7 +1,6 @@
 import aiohttp
 import logging
 
-from aiohttp.client_ws import ClientWebSocketResponse
 
 from bot.settings import Settings
 from bot.variablemappings.settingsFields import SettingsFields
