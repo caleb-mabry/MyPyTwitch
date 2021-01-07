@@ -1,8 +1,8 @@
 import aiohttp
 import asyncio
 
-from settings import Settings
-from enumerations.settingsFields import SettingsFields
+from bot.settings import Settings
+from bot.variablemappings.settingsFields import SettingsFields
 WEB_SOCKET_SSL = 'wss://irc-ws.chat.twitch.tv:443'
 
 
