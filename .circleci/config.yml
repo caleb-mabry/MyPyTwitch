@@ -22,6 +22,8 @@ jobs:
       - run:
           command: ./cc-test-reporter before-build
       - run:
+          command: coverage run -m pytest
+      - run:
           command: coverage xml
       - run:
           command: ./cc-test-reporter after-build --exit-code $?
