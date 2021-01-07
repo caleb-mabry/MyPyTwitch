@@ -5,12 +5,20 @@ orbs:
 
 jobs:
   build-and-test:
+    environment:
+      CC_TEST_REPORTER_ID: 12d3d4baa24ff10c60448b1e02f07218f6a8076f4c2c3af91045e1fb7df14a96
     executor: python/default
     steps:
       - checkout
       - python/load-cache
       - python/install-deps
       - python/save-cache
+      - run:
+        name: Setup Code Climate test-reporter
+        command: |
+        # download test reporter as a static binary
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+          chmod +x ./cc-test-reporter
       - run:
           command: pytest
           name: Test
