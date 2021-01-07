@@ -13,7 +13,7 @@ class Settings:
 
     def _read_settings_file(self) -> Dict[SettingsFields, Any]:
         if Path(self.FILENAME).exists():
-            with open('settings.json') as file:
+            with open(self.FILENAME) as file:
                 return json.load(file)
         else:
             raise FileNotFoundError(f'{self.FILENAME} does not exist')
